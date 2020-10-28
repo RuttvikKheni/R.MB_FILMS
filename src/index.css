@@ -1,4 +1,9 @@
+*{
+  font-family: 'Grandstander', cursive;
+}
+
 body {
+  background-color: #7ee5e9;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -10,4 +15,12 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.clr{
+  background-color: #7ee5e985;
+  color: #000 !important;
+  border: 1px;
+  border-radius: 25px;
+  margin: 5px;
 }
