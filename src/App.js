@@ -2,7 +2,44 @@ import React from 'react'
 import Navbar from './Navbar'
 import Home from './Component/Home/Home'
 import About from "./Component/About/About"
-import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
+import Photography from "./Component/Photography/Photography"
+import Grids from "./Component/Photography/Grids"
+import Clients from "./Component/Clients/Clients"
+import Contact from "./Component/Contact/Contact"
+import { BrowserRouter as Router, Route, Redirect, Switch } from "react-router-dom";
+
+const routes = [
+  {
+    path: '/',
+    component: Home,
+    exact: true,
+  },
+  {
+    path: '/about',
+    component: About,
+    exact: true,
+  },
+  {
+    path: '/Photography/:type',
+    component: Grids,
+    exact: true,
+  },
+  {
+    path: '/Photography',
+    component: Photography,
+    exact: true,
+  },
+  {
+    path: '/clients',
+    component: Clients,
+    exact: true,
+  },
+  {
+    path: '/contactus',
+    component: Contact,
+    exact: true,
+  }
+];
 
 
 class App extends React.Component {
@@ -10,12 +47,12 @@ class App extends React.Component {
     return <>
       <Router>
         <Navbar />
-        <Route exact path="/" component={Home} />
-        <Route exact path="/about" component={About} />
-        <Route exact path="/Photography" component="Photography" />
-        <Route exact path="/clients" component="Clients" />
-        <Route exact path="/contactus" component="Contact" />
-        <Redirect path="/" />
+        <Switch>
+          {routes.map((route, i) => (
+            <Route key={i} {...route} />
+          ))}
+        </Switch>
+        {/* <Redirect path="/" /> */}
       </Router>
     </>
   }
