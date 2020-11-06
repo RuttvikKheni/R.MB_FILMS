@@ -32,19 +32,19 @@ const About = () => {
                                 </div>
                             </div>
                             <div className="row m-1">
-                                <div className="col-3 border p-2" style={{ borderRadius: "10px", backgroundColor: "#7ee5e9" }}>
+                                <div className="col-sm-12 col-md-6 col-lg-3 border p-2" style={{ borderRadius: "10px", backgroundColor: "#7ee5e9" }}>
                                     <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                                     <a rel="noreferrer" target="_blank" href="https://instagram.com/mb_films_9_?igshid=18zme27si1fsb" className="btn" style={{ color: "#FFF", background: "linear-gradient(200deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d)", borderRadius: "10px" }}><i className="fa fa-instagram" aria-hidden="true"></i> Instagram</a>
                                 </div>
-                                <div className="col-3 border p-2" style={{ borderRadius: "10px", backgroundColor: "#7ee5e9" }}>
+                                <div className="col-sm-12 col-md-6 col-lg-3 border p-2" style={{ borderRadius: "10px", backgroundColor: "#7ee5e9" }}>
                                     <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                                     <a rel="noreferrer" target="_blank" href="https://www.youtube.com/channel/UCbRsPqafjvcnsRPOPuSjibQ" className="btn" style={{ color: "#FFF", background: "linear-gradient(200deg, #ff0000, #282828)", borderRadius: "10px" }}><i className="fa fa-youtube-play" aria-hidden="true"></i> Youtube</a>
                                 </div>
-                                <div className="col-3 border p-2" style={{ borderRadius: "10px", backgroundColor: "#7ee5e9" }}>
+                                <div className="col-sm-12 col-md-6 col-lg-3 border p-2" style={{ borderRadius: "10px", backgroundColor: "#7ee5e9" }}>
                                     <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                                     <a rel="noreferrer" target="_blank" href="https://www.facebook.com/meets.borad.5" className="btn" style={{ color: "#FFF", background: "linear-gradient(25deg, #3b5998, #FFFFFF)", borderRadius: "10px" }}><i className="fa fa-facebook-official" aria-hidden="true"></i> FaceBook</a>
                                 </div>
-                                <div className="col-3 border p-2" style={{ borderRadius: "10px", backgroundColor: "#7ee5e9" }}>
+                                <div className="col-sm-12 col-md-6 col-lg-3 border p-2" style={{ borderRadius: "10px", backgroundColor: "#7ee5e9" }}>
                                     <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                                     <a rel="noreferrer" target="_blank" href="/" className="btn" style={{ color: "#FFF", background: "linear-gradient(25deg, #E5FFCC, #1EBEA5, #00E676, #D0E9EA, #EDF8F5, #ffffff)", borderRadius: "10px" }}><i className="fa fa-whatsapp" aria-hidden="true"></i> Whatsapp</a>
                                 </div>

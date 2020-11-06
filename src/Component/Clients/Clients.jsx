@@ -41,8 +41,6 @@ const Clients = () => {
                     <h1 className="m-auto">{"Our Client's"}</h1>
                 </div>
                 <div className="row">
-
-
                     {
                         Clients.map((Client, i) => {
                             return (

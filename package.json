@@ -31,8 +31,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": [
-    "http://localhost:3000",
-    "https://mbfilms.herokuapp.com/"
-  ]
+  "proxy": "https://mbfilms.herokuapp.com/"
 }
