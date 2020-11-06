@@ -5,6 +5,7 @@ import About from "./Component/About/About"
 import Photography from "./Component/Photography/Photography"
 import Grids from "./Component/Photography/Grids"
 import Clients from "./Component/Clients/Clients"
+import Client from "./Component/Clients/Client"
 import Contact from "./Component/Contact/Contact"
 import { BrowserRouter as Router, Route, Redirect, Switch } from "react-router-dom";
 
@@ -27,6 +28,10 @@ const routes = [
   {
     path: '/Photography',
     component: Photography,
+    exact: true,
+  }, {
+    path: '/clients/:client',
+    component: Client,
     exact: true,
   },
   {

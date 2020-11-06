@@ -15,7 +15,7 @@ const Photography = () => {
             .catch((err) => {
                 // console.log(err);
             });
-    }, [photographyImg])
+    }, [setPhotographyImg])
 
     return (
         <>
