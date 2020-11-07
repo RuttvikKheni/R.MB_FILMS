@@ -31,7 +31,7 @@ function Client(props) {
                         client.imgs.map((val, i) => {
                             return (
                                 < div className="col-4 p-2 my-auto" style={{ borderRadius: "10px" }}>
-                                    <img style={{ borderRadius: "5px" }} className="img my-auto m-auto w-100" src={val} alt="Clients Images" />
+                                    <img style={{ borderRadius: "5px" }} className="img my-auto m-auto w-100" src={Axios.defaults.baseURL + val} alt="Clients Images" />
                                 </div>
                             )
                         })

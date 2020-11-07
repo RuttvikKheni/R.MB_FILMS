@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import $ from 'jquery'
 import { Link } from 'react-router-dom';
+import Axios from 'axios';
 
 const Clients = () => {
 
@@ -9,18 +9,14 @@ const Clients = () => {
 
     useEffect(() => {
 
-        $.ajax({
-            method: "get",
-            url: '/api/clients',
-            dataType: "JSON",
-            success: function (data) {
-                console.log(data);
-                setClients(data);
-            },
-            error: function (error) {
-                console.log(error);
-            }
-        });
+        Axios.get('/api/clients')
+            .then((data) => {
+                setClients(data.data);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+
     }, [setClients])
 
 
@@ -42,7 +38,7 @@ const Clients = () => {
                                             {
                                                 Client.imgs.map((val, i) => (
                                                     <div key={i} className={`carousel-item ${i === 0 && 'active'}`}>
-                                                        <img style={{ width: "100%" }} src={val} className="d-block w-100" alt="Slider Images" />
+                                                        <img style={{ width: "100%" }} src={Axios.defaults.baseURL + val} className="d-block w-100" alt="Slider Images" />
                                                     </div>
                                                 ))
                                             }
