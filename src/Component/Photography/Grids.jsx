@@ -1,22 +1,23 @@
 import React, { useEffect, useState } from 'react';
-import $ from "jquery";
+import Axios from 'axios';
 
 function Grids(props) {
-    let [img, setImg] = useState({});
+    let [img, setImg] = useState({
+        imgs: []
+    });
 
 
     useEffect(() => {
-        $.ajax({
-            method: "get",
-            url: `/api/photography/${props.match.params.type}`,
-            success: (data) => {
+
+        Axios.get(`/api/photography/${props.match.params.type}`)
+            .then((data) => {
                 console.log(data);
-                setImg(data);
-            },
-            error: (err) => {
+                setImg(data.data);
+            })
+            .catch((err) => {
                 console.log(err);
-            }
-        });
+            });
+
     }, [setImg]);
 
 
@@ -36,7 +37,7 @@ function Grids(props) {
                         img.imgs.map((val, i) => {
                             return (
                                 <div className="col-4 p-2 my-auto" style={{ borderRadius: "10px" }}>
-                                    <img style={{ borderRadius: "5px" }} className="img my-auto m-auto w-100" src={val} alt="Wedding Img" />
+                                    <img style={{ borderRadius: "5px" }} className="img my-auto m-auto w-100" src={Axios.defaults.baseURL + val} alt="Wedding Img" />
                                 </div>
                             )
                         })

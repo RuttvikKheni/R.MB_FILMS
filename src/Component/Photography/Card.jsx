@@ -1,3 +1,4 @@
+import Axios from 'axios';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -11,7 +12,7 @@ const Card = ({ catagory, text, imgs }) => {
                             {
                                 imgs.map((val, i) => (
                                     <div key={i} className={`carousel-item ${i === 0 && 'active'}`}>
-                                        <img style={{ width: "100%" }} src={val} className="d-block w-100" alt="Slider Images" />
+                                        <img style={{ width: "100%" }} src={Axios.defaults.baseURL + val} className="d-block w-100" alt="Slider Images" />
                                     </div>
                                 ))
                             }

@@ -1,3 +1,4 @@
+import Axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import Card from './Card';
 
@@ -8,13 +9,24 @@ import './Phototgraphy.css';
 const Photography = () => {
     let [photographyImg, setPhotographyImg] = useState([]);
     useEffect(() => {
-        fetch('./api/photography', { method: "get" }).then(data => data.json())
-            .then((imgs) => {
-                setPhotographyImg(imgs);
+
+        Axios.get('/api/photography')
+            .then(data => {
+                console.log(data.data);
+                setPhotographyImg(data.data);
             })
             .catch((err) => {
-                // console.log(err);
+                console.log(err);
             });
+
+
+
+        // fetch('./api/photography', { method: "get" }).then(data => data.json())
+        //     .then((imgs) => {
+        //     })
+        //     .catch((err) => {
+        //         // console.log(err);
+        //     });
     }, [setPhotographyImg])
 
     return (

@@ -12,6 +12,7 @@ const Clients = () => {
         $.ajax({
             method: "get",
             url: '/api/clients',
+            dataType: "JSON",
             success: function (data) {
                 console.log(data);
                 setClients(data);
@@ -20,15 +21,6 @@ const Clients = () => {
                 console.log(error);
             }
         });
-
-
-
-        // fetch('/api/clients', { method: "get" }).then(data => data.json())
-        //     .then((imgs) => {
-        //         setClients(imgs);
-        //     })
-        //     .catch((err) => {
-        //     });
     }, [setClients])
 
 
@@ -64,8 +56,8 @@ const Clients = () => {
                                     </div>
                                     <div className="card-body">
                                         <h5 className="card-title">{Client.clientName}</h5>
-                                        <p className="card-text">Some quick example text to build on the Client 1 and make up the bulk of the card's content.</p>
-                                        <Link to={"/Clients/1"} className="btn btn-primary">See More</Link>
+                                        <p className="card-text">{Client.discription}.</p>
+                                        <Link to={"/Clients/" + Client.clientName} className="btn btn-primary">See More</Link>
                                     </div>
                                 </div>
                             )

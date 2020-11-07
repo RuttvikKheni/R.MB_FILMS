@@ -1,25 +1,26 @@
+import Axios from 'axios';
 import React, { useEffect, useState } from 'react';
 
 const About = () => {
-    let [img, setImg] = useState("https://www.imgacademy.com/themes/custom/imgacademy/images/helpbox-contact.jpg");
+    let [img, setImg] = useState("");
     useEffect(() => {
-        try {
-            fetch("./api/about", { method: "get" })
-                .then(data => data.json())
-                .then(img => setImg(img))
-                .catch((err) => {
-                    img = "https://www.imgacademy.com/themes/custom/imgacademy/images/helpbox-contact.jpg"
-                });
-        } catch (err) {
-            console.log(err);
-        }
-    }, [img])
+
+        Axios.get('/api/about')
+            .then((data) => {
+                console.log(data);
+                setImg(data.data);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    }, [setImg])
+
     return (
         <div>
             <div className=" col-11 col-md-10 col-lg-6 col-xl-6 mx-auto my-4">
                 <div className="column" style={{ backgroundColor: " #FFF", paddingBottom: "5px", borderRadius: "50px" }}>
                     <div className="p-4">
-                        <img style={{ borderRadius: "50px" }} src={img} className="card-img-top" alt='img' />
+                        <img style={{ borderRadius: "50px" }} src={Axios.defaults.baseURL + img} className="card-img-top" alt='img' />
                     </div>
                     <div className="card-body">
                         <div>
