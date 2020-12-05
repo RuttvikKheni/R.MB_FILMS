@@ -5,7 +5,7 @@ import App from './App';
 import axios from 'axios';
 import reportWebVitals from './reportWebVitals';
 
-axios.defaults.baseURL = "https://mbfilms.herokuapp.com/"
+axios.defaults.baseURL = "https://mbfilms.herokuapp.com"
 
 ReactDOM.render(
   <React.StrictMode>
