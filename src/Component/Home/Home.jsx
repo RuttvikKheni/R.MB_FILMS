@@ -29,7 +29,7 @@ const Home = () => {
                         data.map((value, key) => {
                             return (
                                 <div className={`carousel-item ${key == 0 ? "active" : null}`}>
-                                    <img src={Axios.defaults.baseURL + "/public/profile/home/" + value.imgName} className="d-block w-100" alt="Slider Images" />
+                                    <img src={Axios.defaults.baseURL + "/public/Profile/Home/" + value.imgName} className="d-block w-100" alt="Slider Images" />
                                     <div className="carousel-caption d-none d-md-block">
                                         <h5>{value.imgData}</h5>
                                     </div>
